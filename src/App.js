@@ -10,7 +10,6 @@ import ACDBD2020 from './Pages/ACDBD2020';
 import Footer from './Components/Footer';
 import Events from './Pages/Events';
 import Blog from './Pages/Blog';
-import useWindowSize from './hooks/useWIndowsSize';
 import HambugerMenu from './Components/HamburgerMenu';
 
 const NavbarItems = [

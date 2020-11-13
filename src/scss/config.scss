@@ -37,6 +37,10 @@ code {
     monospace;
 }
 
+.noscroll {
+  overflow-y: hidden;
+}
+
 a {
   &:link,
   &:focus,

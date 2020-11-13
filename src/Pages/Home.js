@@ -135,7 +135,9 @@ export default function Home() {
               rel='noopener noreferrer'
             >
               <span>
-                <YoutubeIcon />
+                <YoutubeIcon
+                  style={{ paddingTop: '5px', paddingLeft: '5px' }}
+                />
               </span>
             </a>
           </div>
@@ -250,7 +252,9 @@ export default function Home() {
               rel='noopener noreferrer'
             >
               <span>
-                <YoutubeIcon />
+                <YoutubeIcon
+                  style={{ paddingTop: '5px', paddingLeft: '5px' }}
+                />
               </span>
             </a>
           </div>

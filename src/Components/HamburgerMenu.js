@@ -15,9 +15,7 @@ export default function HamburgerMenu({ items }) {
       document.querySelector('body').style.overflowY = 'auto';
     };
   }, [clicked]);
-  const showMenu = () => {
-    console.log('Menu Clicked');
-  };
+
   return (
     <div className={style.HamburgerMenu}>
       <div

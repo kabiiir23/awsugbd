@@ -219,8 +219,8 @@
         @include fontStyle;
         position: static;
         right: 10%;
-        margin: 12vh 0 6vh 0;
-        padding-top: 0;
+        margin: 12vh auto 6vh auto;
+        padding-left: 3vw;
         color: $gray-1;
         font-weight: weight(medium);
         font-size: 1.5rem;
@@ -228,13 +228,13 @@
         line-height: 66px;
         hr {
           position: relative;
+          left: -5px;
           margin-top: 0.8em;
           color: #ff9900;
         }
         &__link {
           position: relative;
-          //top: 15px;
-
+          left: 5px;
           span {
             color: $gray-1;
             font-size: 2rem;
@@ -265,6 +265,14 @@
     &__tagLines {
       height: 15vh;
       display: flex;
+      * + * {
+        div {
+          margin-left: 50px;
+        }
+        span {
+          margin-left: 50px;
+        }
+      }
     }
   }
 }
