@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import 'config.scss';
+
+$topBrandingHeight: 18vh;
+
+.BrandingContainer {
+  @include flexCenter;
+  @include fontStyle;
+
+  background-color: #ffffff;
+  color: $secondaryColor;
+
+  position: relative;
+  top: 0;
+
+  height: $topBrandingHeight;
+  width: 100%;
+
+  //z-index: 99;
+
+  scroll-snap-align: end;
+  @include media('<1200px') {
+    height: 12vh;
+    box-shadow: 0 0 4px #383838;
+    z-index: 4;
+  }
+  a {
+    display: block;
+  }
+}
+.brand {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+  font-weight: weight(bold);
+  letter-spacing: 0.2em;
+  transition: all 0.2s ease-in-out;
+  @include fontOutline($primaryColor, black);
+  .leftStyle {
+    background: url('../assets/Left Pattern.svg') no-repeat left;
+    //background-position: left;
+    background-size: contain;
+    height: $topBrandingHeight;
+    width: 25vw;
+  }
+  .rightStyle {
+    @extend .leftStyle;
+    background: url('../assets/Right Pattern.svg') no-repeat right;
+    background-size: contain;
+  }
+  .brandlogo {
+    display: block;
+    margin: auto;
+    .brandlogoXL {
+      height: $topBrandingHeight * 60/100;
+      width: auto;
+      margin: auto;
+    }
+    .brandlogoM {
+      height: 12vh * 50/100;
+      width: auto;
+      margin: auto;
+    }
+  }
+  .hide {
+    display: none;
+  }
+  @include media('>=1200px') {
+    .brandlogoM {
+      display: none;
+    }
+  }
+  @include media('<1200px') {
+    .leftStyle,
+    .rightStyle,
+    .brandlogoXL {
+      display: none;
+    }
+    .brandlogo {
+      display: inline-block;
+      z-index: 6;
+    }
+  }
+}

@@ -1,0 +1,266 @@
+@import 'config.scss';
+.home {
+  width: 100%;
+  //height: 92vh;
+  .heroSection {
+    // background: white url('../assets/Tiger pattern.svg') center center / cover
+    //   no-repeat;
+    min-height: 94vh;
+    padding: 0 15vw 0 15vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 82vh 12vh;
+    grid-template-areas:
+      'text      image'
+      'scroller  scroller';
+    position: relative;
+
+    scroll-snap-align: start;
+    scroll-margin-top: 6vh;
+
+    @include media('<1200px') {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding-bottom: 10vh;
+      .heroSection__sideText {
+        padding-top: 0;
+        margin: 7vh 0;
+        text-align: center;
+        font-size: 2rem;
+        hr {
+          position: relative;
+          top: 5px;
+          margin: auto;
+          margin-top: 0.5em;
+
+          color: #ff9900;
+
+          height: 2px;
+          width: 235px;
+        }
+      }
+      .heroSection__scroller {
+        display: none;
+      }
+      .heroSection__sideText__social__icon svg {
+        margin: 0 3vw 0 0;
+      }
+    }
+    &__sideText {
+      max-width: 100%;
+      @include fontStyle;
+
+      //margin-top: 12vh;
+      margin: auto 0;
+      //padding-top: 6%;
+
+      color: $gray-1;
+      font-weight: weight(regular);
+      font-size: 2.5rem;
+      text-align: left;
+      line-height: 80px;
+      &__link {
+        position: relative;
+        top: 15px;
+        hr {
+          position: relative;
+          top: 5px;
+          margin-top: 0.5em;
+
+          color: #ff9900;
+
+          height: 2px;
+          width: 235px;
+        }
+        span {
+          color: $gray-1;
+          font-size: 2rem;
+
+          &:hover {
+            color: #ff9900;
+            svg {
+              transition: 0.4s left ease-in-out;
+              left: 50px;
+            }
+          }
+        }
+        svg {
+          position: relative;
+          left: 30px;
+          top: 5px;
+        }
+      }
+      &__social {
+        position: relative;
+        display: block;
+        &__icon {
+          position: relative;
+          span {
+            color: $gray-1;
+            font-size: 2rem;
+
+            &:hover {
+              color: #ff9900;
+              svg {
+                transition: 0.1s top ease-in-out;
+                top: 3px;
+              }
+            }
+          }
+
+          svg {
+            margin: 0 3vw 0 0;
+            position: relative;
+          }
+        }
+      }
+    }
+    &__sideImage {
+      margin: auto 0;
+      position: relative;
+      img {
+        width: 100%;
+        //transform: rotate(60deg) skew(-30deg) scaleY(0.864);
+      }
+      iframe {
+        display: none;
+        width: 80%;
+        height: 50%;
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        z-index: 5;
+        border-radius: 15px;
+      }
+    }
+    &__scroller {
+      display: block;
+      //position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+  }
+
+  // About User Group Section //
+
+  .userGroup {
+    padding-top: 10vh;
+    min-height: 96vh;
+    width: 100%;
+
+    // background: white url('../assets/Tiger pattern.svg') center -1em / cover no-repeat;
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+
+    scroll-snap-align: start;
+    scroll-margin-top: 6vh;
+
+    &__story {
+      width: 60%;
+      @include fontStyle;
+      color: $gray-1;
+      text-align: justify;
+      text-justify: newspaper;
+      margin-bottom: 10vh;
+      line-height: 46px;
+      h1 {
+        font-size: 2.5rem;
+        margin: 15px 0;
+      }
+      p {
+        font-size: 1.2rem;
+        margin: 15px 0;
+      }
+    }
+
+    &__carousel {
+      // display: flex;
+      // width: 100%;
+      // align-items: center;
+      // justify-content: space-around;
+      // @include media('<1200px') {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding-bottom: 10vh;
+      .teamMembers {
+        display: flex;
+        position: relative;
+        flex-flow: column nowrap;
+        align-items: baseline;
+        margin-top: 18vh;
+        @include fontStyle;
+        h1 {
+          font-size: 2.5rem;
+          @include media('<=630px') {
+            font-size: 1.6rem;
+          }
+        }
+        @include media('>=1100px') {
+          h1 {
+            position: absolute;
+            font-size: 3rem;
+            transform: rotate(270deg);
+            text-transform: uppercase;
+            left: -50%;
+            top: 50%;
+          }
+        }
+      }
+      &__sideText {
+        @include fontStyle;
+        position: static;
+        right: 10%;
+        margin: 12vh 0 6vh 0;
+        padding-top: 0;
+        color: $gray-1;
+        font-weight: weight(medium);
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 66px;
+        hr {
+          position: relative;
+          margin-top: 0.8em;
+          color: #ff9900;
+        }
+        &__link {
+          position: relative;
+          //top: 15px;
+
+          span {
+            color: $gray-1;
+            font-size: 2rem;
+
+            &:hover {
+              color: #ff9900;
+              svg {
+                transition: 0.1s top ease-in-out;
+                //top: 8px;
+              }
+            }
+          }
+
+          svg {
+            margin: 0 2vw 0 0vw;
+            position: relative;
+            //left: 30px;
+            top: 5px;
+          }
+        }
+        a:active {
+          svg {
+            transform: translateY(3px);
+          }
+        }
+      }
+    }
+    &__tagLines {
+      height: 15vh;
+      display: flex;
+    }
+  }
+}

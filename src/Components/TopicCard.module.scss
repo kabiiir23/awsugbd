@@ -1,0 +1,29 @@
+@import 'config.scss';
+
+.TopicCard {
+  display: inline-block;
+
+  height: 10vw;
+  width: 10vw;
+
+  //border-radius: 30px;
+  //margin: 10vh 2vw;
+  //background-color: $gray-1;
+  padding: 20px 40px;
+  &__icon {
+    font-size: 3em;
+    color: $gray-1;
+  }
+  &__text {
+    @include fontStyle;
+    font-weight: weight('medium');
+  }
+  &:hover {
+    .TopicCard__icon {
+      color: $hoverRed;
+    }
+    .TopicCard__text {
+      color: $hoverRed;
+    }
+  }
+}

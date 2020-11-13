@@ -1,0 +1,29 @@
+@import 'config.scss';
+.Container {
+  display: flex;
+  .Carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    height: 30vw;
+    background: black;
+
+    overflow: hidden;
+
+    &__image {
+      width: 40vw;
+    }
+  }
+  .Arrows {
+    color: $gray-1;
+
+    z-index: 5;
+  }
+  .LeftArrow {
+    @extend .Arrows;
+  }
+  .RightArrow {
+    @extend .Arrows;
+  }
+}

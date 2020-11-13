@@ -1,0 +1,31 @@
+@import 'config.scss';
+
+.Events {
+  max-width: 80vw;
+  margin: auto;
+  // background: white url('../assets/Tiger pattern.svg') center center / cover
+  //   no-repeat;
+  margin-bottom: 2rem;
+  h1 {
+    @include fontStyle;
+    padding: 25px 10vw;
+    color: black;
+    text-align: left;
+  }
+  &__Upcoming {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    p {
+      font-size: 1.3rem;
+      @include fontStyle;
+      padding: 0 10vw;
+      text-align: left;
+    }
+  }
+  &__Previous {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

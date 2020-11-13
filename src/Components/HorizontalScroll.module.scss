@@ -1,0 +1,33 @@
+@import 'config';
+@import url(https://fonts.googleapis.com/css?family=Odibee+Sans:regular);
+
+.HorizontalScroll {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  //box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+
+  height: 12vh;
+  //margin: 0vh 0vh;
+  padding: 1vh 0 3vh 5vw;
+
+  span {
+    color: $gray-1;
+
+    //@include fontStyle;
+    font-family: 'Odibee Sans', monospace;
+    font-size: 8vh;
+    font-weight: 1000;
+    letter-spacing: 5vw;
+    opacity: 0.9;
+
+    cursor: pointer;
+
+    //@include fontOutline(white, black);
+
+    &:hover {
+      opacity: 0.2;
+    }
+  }
+}

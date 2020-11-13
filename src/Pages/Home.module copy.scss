@@ -1,0 +1,155 @@
+@import 'config.scss';
+.home {
+  width: 100%;
+  //height: 92vh;
+  .heroSection {
+    background: white url('../assets/Tiger pattern.svg') center center / cover
+      no-repeat;
+    min-height: 94vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    scroll-snap-align: start;
+    scroll-margin-top: 6vh;
+
+    &__sideText {
+      flex: 1 0 100%;
+
+      max-width: 40%;
+      @include fontStyle;
+
+      margin-top: 12vh;
+      padding-top: 6%;
+
+      color: $gray-1;
+      font-weight: weight(regular);
+      font-size: 2.5vmax;
+      text-align: left;
+      line-height: 56px;
+      &__link {
+        position: relative;
+        top: 15px;
+        hr {
+          position: relative;
+          top: 5px;
+          margin-top: 0.5em;
+
+          color: #ff9900;
+
+          height: 2px;
+          width: 235px;
+        }
+        span {
+          color: $gray-1;
+          font-size: 2vmax;
+
+          &:hover {
+            color: #ff9900;
+            svg {
+              transition: 0.4s left ease-in-out;
+              left: 50px;
+            }
+          }
+        }
+        svg {
+          position: relative;
+          left: 30px;
+          top: 5px;
+        }
+      }
+    }
+    &__sideImage {
+      margin-top: 12vh;
+      //margin-bottom: 10vh;
+      img {
+        width: 40vmax;
+      }
+    }
+    &__scroller {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+  }
+  .userGroup {
+    padding-top: 10vh;
+    height: 96vh;
+    width: 100%;
+    //background-color: $primaryColor;
+    background: white url('../assets/Tiger pattern.svg') center -1em / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    scroll-snap-align: start;
+    scroll-margin-top: 6vh;
+
+    //box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.5);
+
+    &__carousel {
+      margin: 10vh 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      column-gap: 10vw;
+      align-items: center;
+
+      &__sideText {
+        //max-width: 40%;
+        @include fontStyle;
+
+        //margin-top: 0vh;
+        //margin-left: 10vw;
+        //padding-top: 6%;
+
+        color: $gray-1;
+        font-weight: weight(medium);
+        font-size: 1.5vmax;
+        text-align: left;
+        line-height: 66px;
+        hr {
+          position: relative;
+          //top: 10px;
+          margin-top: 0.8em;
+
+          color: #ff9900;
+
+          height: 2px;
+          width: 235px;
+        }
+        &__link {
+          position: relative;
+          //top: 15px;
+
+          span {
+            color: $gray-1;
+            font-size: 2rem;
+
+            &:hover {
+              color: #ff9900;
+              svg {
+                transition: 0.1s top ease-in-out;
+                top: 8px;
+              }
+            }
+          }
+          svg {
+            margin: 0 2vw 0 0vw;
+            position: relative;
+            left: 30px;
+            top: 5px;
+          }
+        }
+      }
+    }
+    &__tagLines {
+      display: flex;
+    }
+  }
+}
