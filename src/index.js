@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { registerObserver } from 'react-perf-devtool';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
-registerObserver();
 ReactDOM.render(
   <React.StrictMode>
     <App />
