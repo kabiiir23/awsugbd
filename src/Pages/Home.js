@@ -170,14 +170,16 @@ export default function Home() {
         >
           <h1>AWS User Group Bangladesh</h1>
           <p>
-            This group is to extend the professional network of Amazon Web
-            Services (AWS) professionals in order to share and create knowledge
-            and mutual benefit. Also we'd like to help people out with their
-            queries about cloud platform for their practical uses. We are mainly
-            focusing on Amazon Web Services for now. With time, there might be
-            other cloud platforms to discuss, explore and experience. But for
-            now we are here with a view to help cloud service seekers to find a
-            common platform much more convenient than the conventional manner.
+            AWS User Group Bangladesh is to extend the professional network of
+            Amazon Web Services (AWS) professionals in order to share and create
+            knowledge and mutual benefit. This is the only Amazon approved AWS
+            user group in Bangladesh. Also we'd like to help people out with
+            their queries about cloud platform for their practical uses. We are
+            mainly focusing on Amazon Web Services for now. With time, there
+            might be other cloud platforms to discuss, explore and experience.
+            But for now we are here with a view to help cloud service seekers to
+            find a common platform much more convenient than the conventional
+            manner.
           </p>
         </div>
         <div className={style.userGroup__carousel} ref={addtoScrollRef}>
