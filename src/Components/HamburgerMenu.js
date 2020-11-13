@@ -3,28 +3,36 @@ import React, { useEffect, useState } from 'react';
 import { CgMenuLeft, CgClose } from 'react-icons/cg';
 import { NavHashLink } from 'react-router-hash-link';
 
+import { gsap } from 'gsap';
+
 import style from './HamburgerMenu.module.scss';
 
 export default function HamburgerMenu({ items }) {
   const [clicked, setClicked] = useState(false);
-  //   useEffect(() => {
-  //     if (clicked) showMenu();
-  //   }, [clicked]);
-  //   const showMenu = () => {
-  //     console.log('Menu Clicked');
-  //   };
+  useEffect(() => {
+    if (clicked) document.querySelector('body').style.overflowY = 'hidden';
+    return () => {
+      document.querySelector('body').style.overflowY = 'auto';
+    };
+  }, [clicked]);
+  const showMenu = () => {
+    console.log('Menu Clicked');
+  };
   return (
     <div className={style.HamburgerMenu}>
       <div
         className={style.HamburgerMenu__icon}
         onClick={() => {
-          setClicked(!clicked);
+          setClicked((state) => !state);
         }}
       >
         {clicked ? <CgClose /> : <CgMenuLeft />}
       </div>
       {clicked ? (
-        <div className={style.HamburgerMenu__linkContainer}>
+        <div
+          className={style.HamburgerMenu__linkContainer}
+          style={clicked ? { visibility: 'visible' } : { visibility: 'hidden' }}
+        >
           {items.map((items) => (
             <NavHashLink
               to={{
@@ -35,6 +43,9 @@ export default function HamburgerMenu({ items }) {
               smooth
               key={items.id}
               className={style.HamburgerMenu__link}
+              onClick={() => {
+                setClicked((state) => !state);
+              }}
             >
               {items.item}
             </NavHashLink>

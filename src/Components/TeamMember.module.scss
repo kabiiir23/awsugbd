@@ -58,11 +58,11 @@
     @include media('<=630px') {
       padding-left: 25px;
       .name {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 700;
       }
       .details {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 500;
       }
     }
