@@ -47,3 +47,6 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 # Local Netlify folder
 .netlify
+
+# vscode
+.vscode
