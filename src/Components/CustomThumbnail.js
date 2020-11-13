@@ -39,7 +39,7 @@ export default function () {
       className={style.comdayStream}
       ref={containerRef}
       style={{
-        backgroundImage: `url(${require('../assets/bg-1.svg')})`,
+        backgroundImage: `url(${require('../assets/bg-1.png')})`,
       }}
     >
       <div className={style.comdayStream__thumbnail} ref={thumbRef}>
