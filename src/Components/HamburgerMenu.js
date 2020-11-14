@@ -10,13 +10,11 @@ import style from './HamburgerMenu.module.scss';
 
 export default function HamburgerMenu({ items }) {
   const [clicked, setClicked] = useState(false);
+
   useEffect(() => {
-    if (clicked) {
-      document.querySelector('body').style.overflowY = 'hidden';
-      console.log(clicked);
-    }
+    if (clicked) document.querySelector('body').classList.add('noscroll');
     return () => {
-      document.querySelector('body').style.overflowY = 'auto';
+      document.querySelector('body').classList.remove('noscroll');
     };
   }, [clicked]);
 

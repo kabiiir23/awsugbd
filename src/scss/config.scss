@@ -40,7 +40,8 @@ code {
 }
 
 .noscroll {
-  overflow-y: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 a {

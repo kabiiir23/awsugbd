@@ -63,9 +63,6 @@ $topBrandingHeight: 18vh;
       margin: auto;
     }
   }
-  .hide {
-    display: none;
-  }
   @include media('>=1200px') {
     .brandlogoM {
       display: none;
