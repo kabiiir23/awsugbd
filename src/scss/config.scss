@@ -4,6 +4,8 @@ $primaryColor: #fafafa;
 $secondaryColor: #ff9900;
 $textColor: #fafafa;
 $hoverRed: #ff416c;
+$hoverColor: #ff416c;
+$honey: #ff9900;
 $gray-1: #4f4f4f;
 $fontWeights: (
   'light': 200,
@@ -69,7 +71,7 @@ a:active {
 
 @mixin fontStyle {
   font-family: 'Open Sans', 'Helvetica', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.7px;
   color: $gray-1;
 }
 

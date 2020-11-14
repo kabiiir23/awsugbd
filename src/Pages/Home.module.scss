@@ -101,10 +101,10 @@
             font-size: 2rem;
 
             &:hover {
-              color: #ff9900;
+              color: $hoverColor;
               svg {
                 transition: 0.1s top ease-in-out;
-                top: 3px;
+                //top: 3px;
               }
             }
           }
@@ -240,7 +240,7 @@
             font-size: 2rem;
 
             &:hover {
-              color: #ff9900;
+              color: $hoverColor;
               svg {
                 transition: 0.1s top ease-in-out;
                 //top: 8px;
