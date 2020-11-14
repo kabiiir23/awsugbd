@@ -20,7 +20,6 @@ $topBrandingHeight: 18vh;
   @include media('<1200px') {
     height: 12vh;
     box-shadow: 0 0 4px #383838;
-    z-index: 4;
   }
   a {
     display: block;
