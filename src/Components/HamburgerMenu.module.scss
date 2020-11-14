@@ -14,6 +14,9 @@
     z-index: 5;
   }
   &__linkContainer {
+    background: #f1f2f2 url('../assets/Tiger pattern.svg') top center / contain
+      repeat-y;
+    @include fontStyle;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +32,7 @@
     left: 0;
     z-index: 3;
 
-    background: #f1f2f2;
+    //background: #f1f2f2;
 
     font-size: 5vmax;
   }
@@ -37,6 +40,8 @@
     align-self: center;
     color: #383838;
     font-size: 5vmax;
+    font-weight: 600;
+    letter-spacing: 1px;
     padding: 20px 0;
     position: relative;
     &:hover {
