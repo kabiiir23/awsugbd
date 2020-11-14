@@ -32,10 +32,9 @@ const HorizontalScroll = (props) => {
   return (
     <Link
       to='userGroup'
-      //spy={true}
       smooth={true}
       duration={500}
-      offset={-165}
+      offset={-150}
       className={styles.HorizontalScroll}
     >
       {data.map((item) => (

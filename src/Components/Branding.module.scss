@@ -16,9 +16,7 @@ $topBrandingHeight: 18vh;
   height: $topBrandingHeight;
   width: 100%;
 
-  //z-index: 99;
-
-  scroll-snap-align: end;
+  overflow: hidden;
   @include media('<1200px') {
     height: 12vh;
     box-shadow: 0 0 4px #383838;
@@ -79,6 +77,9 @@ $topBrandingHeight: 18vh;
     .rightStyle,
     .brandlogoXL {
       display: none;
+    }
+    .brandlogoM {
+      z-index: 5;
     }
     .brandlogo {
       display: inline-block;
