@@ -19,11 +19,6 @@
   // }
 }
 
-.noscroll {
-  height: 100vh;
-  overflow: hidden;
-}
-
 .quote::before {
   content: '"';
   font-size: 5rem;
