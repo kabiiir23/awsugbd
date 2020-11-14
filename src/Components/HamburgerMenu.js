@@ -46,6 +46,9 @@ export default function HamburgerMenu({ items }) {
                 state: { fromDashboard: false },
               }}
               smooth
+              scroll={(el) => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               key={items.id}
               className={style.HamburgerMenu__link}
               onClick={() => {

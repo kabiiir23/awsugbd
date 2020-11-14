@@ -75,7 +75,7 @@ export default function Home() {
         trigger: bottomTextRef.current,
         scrub: true,
         start: 'top 100%',
-        end: 'bottom bottom-=250',
+        //end: 'bottom bottom-=250',
       },
       //ease: 'power3.in',
       //opacity: 0,

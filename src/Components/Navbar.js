@@ -49,6 +49,9 @@ const NavBar = ({ items }) => {
           to={{
             pathname: `/`,
           }}
+          onClick={(el) => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className={`${style.Nav__icon} ${
             state.show && style.Nav__item__scroll
           }`}
@@ -59,8 +62,11 @@ const NavBar = ({ items }) => {
           <NavHashLink
             to={{
               pathname: `${items.link}`,
-              hash: `${items.hash}`,
+              //hash: `${items.hash}`,
               state: { fromDashboard: false },
+            }}
+            onClick={(el) => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             smooth
             key={items.id}
