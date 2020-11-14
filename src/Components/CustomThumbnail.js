@@ -16,12 +16,12 @@ export default function () {
   const initScrollAnimations = useCallback(() => {
     const animationObj = {
       duration: 0.8,
-      y: '8vw',
+      y: '7vw',
     };
     gsap.to(thumbRef.current, {
       scrollTrigger: {
         trigger: thumbRef.current,
-        start: 'center 90%',
+        start: 'center 100%',
         scrub: true,
       },
       backgroundPositionY: '5vh',

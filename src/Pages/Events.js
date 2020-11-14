@@ -25,7 +25,7 @@ export default function Events(props) {
           venue='Virtual Event'
           description='September installment of the Monthly AWS User Group Meetup.'
           image='Sept2020.jpg'
-          active='false'
+          active={false}
         />
       </div>
     </div>
