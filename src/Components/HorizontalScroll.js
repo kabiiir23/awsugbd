@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { NavHashLink } from 'react-router-hash-link';
+
 import {
   motion,
   useSpring,
