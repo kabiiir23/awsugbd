@@ -17,6 +17,12 @@ export default function HamburgerMenu({ items }) {
     };
   }, [clicked]);
 
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -100;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <div className={style.HamburgerMenu}>
       <div
@@ -49,19 +55,22 @@ export default function HamburgerMenu({ items }) {
               {items.item}
             </NavHashLink>
           ))}
-          <Link
-            to='userGroup'
-            //spy={true}
-            smooth={true}
-            duration={500}
-            offset={-165}
+          <NavHashLink
+            smooth
+            to={{
+              pathname: `/`,
+              hash: 'userGroup',
+            }}
+            scroll={(el) => {
+              scrollWithOffset(el);
+            }}
             className={style.HamburgerMenu__link}
             onClick={() => {
               setClicked((state) => !state);
             }}
           >
             About Us
-          </Link>
+          </NavHashLink>
         </div>
       ) : null}
     </div>

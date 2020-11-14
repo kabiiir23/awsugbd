@@ -35,6 +35,12 @@ const NavBar = ({ items }) => {
     });
   };
 
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -150;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <>
       <div className={`${style.Nav} ${state.show && style.Nav__scroll}`}>
@@ -65,7 +71,22 @@ const NavBar = ({ items }) => {
             {items.item}
           </NavHashLink>
         ))}
-        <Link
+        <NavHashLink
+          smooth
+          to={{
+            pathname: `/`,
+            hash: 'userGroup',
+          }}
+          scroll={(el) => {
+            scrollWithOffset(el);
+          }}
+          className={`${style.Nav__item} ${
+            state.show && style.Nav__item__scroll
+          }`}
+        >
+          About Us
+        </NavHashLink>
+        {/* <Link
           to='userGroup'
           //spy={true}
           smooth={true}
@@ -76,7 +97,7 @@ const NavBar = ({ items }) => {
           }`}
         >
           About Us
-        </Link>
+        </Link> */}
       </div>
     </>
   );

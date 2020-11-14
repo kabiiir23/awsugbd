@@ -59,9 +59,10 @@ a:active {
   }
 }
 
-// html {
-//   scroll-snap-type: y proximity;
-// }
+html {
+  //scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
 
 @mixin flexCenter {
   display: flex;
