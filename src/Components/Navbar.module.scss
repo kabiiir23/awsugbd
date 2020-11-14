@@ -3,6 +3,8 @@
 $navbarHeight: 6vh;
 $navbarBackground: #f2f2f2;
 $navbarItemsColor: #383838;
+$navbarScrolledBackground: #383838;
+$navbarScrolledItemsColor: #f2f2f2;
 
 *:focus {
   outline: none;
@@ -10,6 +12,7 @@ $navbarItemsColor: #383838;
 
 .Nav {
   @include flexCenter;
+  justify-content: space-around;
 
   @include fontStyle;
   font-weight: weight(bold);
@@ -24,17 +27,20 @@ $navbarItemsColor: #383838;
   position: sticky;
   top: 0;
   min-height: $navbarHeight;
-  //padding: 1vh 0;
   width: 100%;
   z-index: 100;
   scroll-snap-align: start;
 
-  //overflow-y: scroll;
-  //margin-bottom: 10vh;
+  * + * {
+    .Nav__item {
+      margin-left: 0vw;
+      padding-right: 12vw;
+    }
+  }
 
   &__scroll {
-    background: $secondaryColor;
-    color: white;
+    background: $navbarScrolledBackground;
+    color: $navbarScrolledItemsColor;
   }
   @include media('<1200px') {
     display: none;
@@ -45,105 +51,30 @@ $navbarItemsColor: #383838;
   color: $navbarItemsColor;
   font-size: 1.8rem;
   padding-top: 5px;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  //margin-left: 10vw;
+  //margin-right: 10vw;
   &:hover {
     color: $hoverRed;
-    //opacity: 0.5;
   }
   &:link {
     text-decoration: none;
   }
 }
-.searchbox {
-  display: flex;
-  margin-left: 5vw;
-  position: relative;
-  //transition: 0.4s linear;
-  outline: none;
 
-  .searchbox__input {
-    position: relative;
-
-    //top: -0.4vw;
-    right: 8vw;
-
-    max-width: 3vw;
-    padding: 1vh;
-
-    font-size: 1.2rem;
-
-    border: none;
-    border-radius: 25px;
-    background-color: $secondaryColor;
-
-    opacity: 0;
-    transition: max-width 0.4s ease;
-
-    &::placeholder {
-      font-weight: weight(regular);
-      color: $primaryColor;
-      opacity: 0.8;
-    }
-    &__scroll {
-      background-color: #eeeeee;
-      color: $secondaryColor;
-      &::placeholder {
-        color: $secondaryColor;
-      }
-    }
-  }
-  .Nav__icon__search {
-    @extend .Nav__icon;
-
-    position: absolute;
-
-    right: 8.5vw;
-    margin-left: 0vw;
-    margin-right: 0vw;
-
-    transform: translate(-10%, -5%);
-
-    //pointer-events: none;
-
-    //transition:  0.4s ease;
-
-    &__scroll {
-      color: white;
-    }
-  }
-  &:focus-within {
-    .searchbox__input {
-      opacity: 1;
-      max-width: 15vw;
-      padding-left: 1.5vw;
-    }
-    .Nav__icon__search {
-      color: $primaryColor;
-      &__scroll {
-        color: $secondaryColor;
-      }
-    }
-  }
-}
 .Nav__item {
   color: $navbarItemsColor;
   margin-right: 10vw;
+  cursor: pointer;
   &:hover {
     color: #ff416c;
     //opacity: 0.7;
   }
-  &:link {
-    text-decoration: none;
-  }
-  &:visited {
-    text-decoration: none;
-  }
-  &scroll {
-    color: white;
-  }
-  &scroll:hover {
-    opacity: 0.7;
-    //color: #ff416c;
+
+  &__scroll {
+    color: $navbarScrolledItemsColor;
+    &:hover {
+      //opacity: 0.7;
+      color: #ff416c;
+    }
   }
 }

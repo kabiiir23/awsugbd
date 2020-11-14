@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
 import { CgMenuLeft, CgClose } from 'react-icons/cg';
 import { NavHashLink } from 'react-router-hash-link';
@@ -48,6 +49,19 @@ export default function HamburgerMenu({ items }) {
               {items.item}
             </NavHashLink>
           ))}
+          <Link
+            to='userGroup'
+            //spy={true}
+            smooth={true}
+            duration={500}
+            offset={-165}
+            className={style.HamburgerMenu__link}
+            onClick={() => {
+              setClicked((state) => !state);
+            }}
+          >
+            About Us
+          </Link>
         </div>
       ) : null}
     </div>

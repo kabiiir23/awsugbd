@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { RiHome6Line as HomeIcon } from 'react-icons/ri';
 import { NavHashLink } from 'react-router-hash-link';
-import { Link } from 'react-scroll';
 import cx from 'classnames';
 import style from './Navbar.module.scss';
+import NavSearchbox from './NavSearchbox';
 
 const NavBar = ({ items }) => {
   const [state, setState] = useState(() => {
@@ -23,7 +23,7 @@ const NavBar = ({ items }) => {
       return setState((previousState) => {
         return {
           ...previousState,
-          show: false,
+          show: true,
         };
       });
 
@@ -42,6 +42,8 @@ const NavBar = ({ items }) => {
           smooth
           to={{
             pathname: `/`,
+            hash: `#main`,
+            state: { fromDashboard: true },
           }}
           className={`${style.Nav__icon} ${
             state.show && style.Nav__item__scroll
@@ -49,6 +51,7 @@ const NavBar = ({ items }) => {
         >
           <HomeIcon className={style.logo} />
         </NavHashLink>
+
         {items.map((items) => (
           <NavHashLink
             to={{
@@ -65,18 +68,7 @@ const NavBar = ({ items }) => {
             {items.item}
           </NavHashLink>
         ))}
-        <Link
-          to='userGroup'
-          //spy={true}
-          smooth={true}
-          duration={500}
-          offset={-165}
-          className={`${style.Nav__item} ${
-            state.show && style.Nav__item__scroll
-          }`}
-        >
-          About Us
-        </Link>
+        <NavSearchbox changeOnScroll={state.show} />
       </div>
     </>
   );

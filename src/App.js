@@ -25,12 +25,6 @@ const NavbarItems = [
     link: '/blog',
     hash: '',
   },
-  {
-    id: 3,
-    item: 'About Us',
-    link: '/',
-    hash: '#userGroup',
-  },
 ];
 
 function App() {

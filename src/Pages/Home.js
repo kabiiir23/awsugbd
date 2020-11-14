@@ -74,11 +74,12 @@ export default function Home() {
       scrollTrigger: {
         trigger: bottomTextRef.current,
         scrub: true,
-        //start: 'top 100%',
+        start: 'top 100%',
+        end: 'bottom bottom-=250',
       },
       //ease: 'power3.in',
       //opacity: 0,
-      y: '-110px',
+      y: '-100px',
       duration: 0.5,
     });
   });

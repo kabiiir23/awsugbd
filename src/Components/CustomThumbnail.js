@@ -21,10 +21,9 @@ export default function () {
     gsap.to(thumbRef.current, {
       scrollTrigger: {
         trigger: thumbRef.current,
-        start: 'center 30%',
+        start: 'center 90%',
         scrub: true,
       },
-      //ease: 'back.out',
       backgroundPositionY: '5vh',
       ...animationObj,
     });

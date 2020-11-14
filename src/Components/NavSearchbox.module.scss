@@ -1,0 +1,83 @@
+@import 'config.scss';
+
+$navbarHeight: 6vh;
+$navbarBackground: #f2f2f2;
+$navbarItemsColor: #383838;
+$navbarScrolledBackground: #383838;
+$navbarScrolledItemsColor: #f2f2f2;
+$placeholderBackground: $hoverRed;
+$placeholderTextColor: $hoverRed;
+$placeholderScrolledBackground: $hoverRed;
+$placeholderScrolledTextColor: $hoverRed;
+
+.searchbox {
+  display: flex;
+  //display: none;
+  margin-left: 5vw;
+  position: relative;
+  //transition: 0.4s linear;
+  outline: none;
+
+  .searchbox__input {
+    position: relative;
+
+    //top: -0.4vw;
+    right: 8vw;
+
+    max-width: 3vw;
+    padding: 1vh;
+
+    font-size: 1.2rem;
+
+    border: none;
+    border-radius: 25px;
+    background-color: $secondaryColor;
+
+    opacity: 0;
+    transition: max-width 0.4s ease;
+
+    &::placeholder {
+      font-weight: weight(regular);
+      color: $primaryColor;
+      opacity: 0.8;
+    }
+    &__scroll {
+      background-color: #eeeeee;
+      color: $secondaryColor;
+      &::placeholder {
+        color: $secondaryColor;
+      }
+    }
+  }
+  .searchbox__icon {
+    color: $navbarItemsColor;
+    font-size: 1.8rem;
+    padding-top: 5px;
+    position: absolute;
+    right: 8.5vw;
+    transform: translate(-10%, -5%);
+
+    &__scroll {
+      color: white;
+    }
+    &:hover {
+      color: $hoverRed;
+    }
+    &:link {
+      text-decoration: none;
+    }
+  }
+  &:focus-within {
+    .searchbox__input {
+      opacity: 1;
+      max-width: 15vw;
+      padding-left: 1.5vw;
+    }
+    .searchbox__icon {
+      color: white;
+      &__scroll {
+        color: $hoverRed;
+      }
+    }
+  }
+}
