@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { ReactComponent as LeftStyle } from '../assets/Left Pattern.svg';
+import { ReactComponent as RightStyle } from '../assets/Right Pattern.svg';
 import logoXL from '../assets/AWSUGBD XL - dark.svg';
 import logoM from '../assets/AWSUGBD M.svg';
 import styles from './Branding.module.scss';
@@ -27,13 +28,17 @@ const Branding = (props) => {
   return (
     <div className={styles.BrandingContainer}>
       <div className={styles.brand}>
-        <div className={styles.leftStyle}></div>
+        <div className={styles.leftStyle}>
+          <LeftStyle />
+        </div>
         <Link ref={addtoRef} to='/' className={styles.brandlogo}>
           <img className={styles.brandlogoXL} src={logoXL} alt='' />
           <img className={styles.brandlogoM} src={logoM} alt='' />
         </Link>
 
-        <div className={styles.rightStyle}></div>
+        <div className={styles.rightStyle}>
+          <RightStyle />
+        </div>
       </div>
     </div>
   );

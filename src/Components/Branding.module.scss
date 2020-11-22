@@ -37,17 +37,33 @@ $topBrandingHeight: 18vh;
   letter-spacing: 0.2em;
   transition: all 0.2s ease-in-out;
   @include fontOutline($primaryColor, black);
-  .leftStyle {
-    background: url('../assets/Left Pattern.svg') no-repeat left;
-    //background-position: left;
-    background-size: contain;
+
+  .topPattern {
+    position: relative;
     height: $topBrandingHeight;
     width: 25vw;
   }
+  .leftStyle {
+    @extend .topPattern;
+    //background: url('../assets/Left Pattern.svg') no-repeat left / contain;
+    //background-position: left;
+    //background-size: contain;
+    //object-fit: contain;
+    svg {
+      position: absolute;
+      height: 100%;
+      left: 0;
+    }
+  }
   .rightStyle {
-    @extend .leftStyle;
-    background: url('../assets/Right Pattern.svg') no-repeat right;
-    background-size: contain;
+    @extend .topPattern;
+    svg {
+      position: absolute;
+      height: 100%;
+      right: 0;
+    }
+    //background: url('../assets/Right Pattern.svg') no-repeat right;
+    //background-size: contain;
   }
   .brandlogo {
     display: block;
