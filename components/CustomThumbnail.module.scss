@@ -1,0 +1,66 @@
+@import 'config';
+
+.comdayStream {
+  display: block;
+  width: 100%;
+  min-height: 50vw;
+  margin: 12vh auto;
+  position: relative;
+  //background: url('https://unsplash.com/photos/S8titTovs3k');
+  // background-image: white url('../assets/Tiger pattern.svg') center center /
+  //   cover no-repeat;
+  //background-color: #1a1a1a;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: 0px 20px 50px 20px white inset, 0px 20px 50px 2px white inset,
+    0px 20px 50px 20px white inset, 0px 20px 50px 2px white inset;
+  //filter: blur(10px);
+  &__thumbnail {
+    position: relative;
+    svg {
+      display: block;
+      z-index: 2;
+      color: #fafafa;
+      position: absolute;
+      font-size: 8vmax;
+      margin: auto;
+      top: 15vw;
+      left: 45%;
+      cursor: pointer;
+
+      @include media('<=1100px') {
+        top: 15vw;
+      }
+    }
+    .logo {
+      z-index: 5;
+      width: 6%;
+      position: absolute;
+      padding-top: 20px;
+      right: 15%;
+    }
+    .thumb {
+      width: 74%;
+      height: 39vw;
+      position: absolute;
+      top: 10%;
+      background-color: #1a1a1a;
+      left: 13%;
+      z-index: 1;
+      border-radius: 5px;
+      object-fit: cover;
+      //pointer-events: none;
+    }
+    iframe {
+      width: 74%;
+      height: 39vw;
+      position: absolute;
+      top: 10%;
+
+      left: 13%;
+      //z-index: 5;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import 'config';
+
+.Container {
+  max-width: 90vw;
+  display: flex;
+  margin: 2vh 0;
+  justify-content: space-evenly;
+  .avatar {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: 25px;
+    //clip-path: circle(50%);
+    @include media('<=630px') {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+    }
+  }
+  .textContainer {
+    @include fontStyle;
+    padding-left: 25px;
+    .name {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .details {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .social {
+      position: relative;
+      display: block;
+      &__icon {
+        position: relative;
+        span {
+          color: $gray-1;
+          font-size: 1.6rem;
+
+          &:hover {
+            color: $hoverColor;
+            svg {
+              transition: 0.1s top ease-in-out;
+              //top: 3px;
+            }
+          }
+        }
+
+        svg {
+          margin: 15px 15px 0 0;
+          position: relative;
+        }
+      }
+    }
+    @include media('<=630px') {
+      padding-left: 25px;
+      .name {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .details {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

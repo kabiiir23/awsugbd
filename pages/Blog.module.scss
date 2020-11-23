@@ -1,0 +1,16 @@
+@import 'config.scss';
+
+.Blog {
+  //background: rgb(230, 230, 230) url('../assets/Tiger pattern.svg') center -1em / cover no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+  min-height: 100vh;
+
+  &_container {
+    //padding: 3rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+}
