@@ -2,9 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
-import TopicCard from '../Components/TopicCard';
-import HorizontalScroll from '../Components/HorizontalScroll';
+
+import TopicCard from '../components/TopicCard';
+import HorizontalScroll from '../components/HorizontalScroll';
 import ImageSlider from '../components/ImageSlider';
+import TeamMember from '../components/TeamMember';
+import CustomThumbnail from '../components/CustomThumbnail';
+import RandomQuote from '../components/RandomQuote';
 
 import {
   CgAttribution as Connect,
@@ -16,10 +20,8 @@ import {
   FaLinkedinIn as LinkedinIcon,
   FaYoutube as YoutubeIcon,
 } from 'react-icons/fa';
+
 import style from './Home.module.scss';
-import TeamMember from '../Components/TeamMember';
-import CustomThumbnail from '../Components/CustomThumbnail';
-import RandomQuote from '../components/RandomQuote';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,7 +112,7 @@ export default function Home(props) {
   });
 
   return (
-    <div className={style.home}>
+    <main className={style.home}>
       <section className={style.heroSection} id='main'>
         <div className={style.heroSection__sideText}>
           <p ref={addtoRef}>
@@ -122,17 +124,7 @@ export default function Home(props) {
             <br />
             IN BANGLADESH
           </p>
-          {/* <Link
-            ref={addtoRef}
-            className={style.heroSection__sideText__link}
-            to='/acdbd2020'
-          >
-            <hr />
-            <span>
-              Read More
-              <CgArrowLongRight />
-            </span>
-          </Link> */}
+
           <div ref={addtoRef} className={style.heroSection__sideText__social}>
             <a
               className={style.heroSection__sideText__social__icon}
@@ -293,6 +285,6 @@ export default function Home(props) {
           <RandomQuote data={props.quotes} />
         </div>
       </section>
-    </div>
+    </main>
   );
 }

@@ -27,7 +27,7 @@ export default function () {
       backgroundPositionY: '5vh',
       ...animationObj,
     });
-  });
+  }, []);
 
   useEffect(() => {
     initScrollAnimations();
@@ -50,12 +50,13 @@ export default function () {
         />
         <img
           src='/assets/AWSUGBD M light.svg'
+          alt='AWS'
           className={style.logo}
           style={clicked ? { display: 'none' } : null}
         />
         <img
           className={style.thumb}
-          style={clicked ? { display: 'none', PointerEvent: 'none' } : null}
+          style={clicked ? { display: 'none', pointerEvents: 'none' } : null}
           src='/assets/videothumb.png'
           alt=''
         />
@@ -64,9 +65,8 @@ export default function () {
             width='560'
             height='315'
             src='https://www.youtube.com/embed/poRJTphpTiQ?rel=0?autoplay=1&mute=0&start=2'
-            frameborder='0'
+            frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen
           ></iframe>
         ) : null}
       </div>

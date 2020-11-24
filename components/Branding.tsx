@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+//@ts-ignore
 import LeftStyle from '../assets/Left Pattern.svg';
+//@ts-ignore
 import RightStyle from '../assets/Right Pattern.svg';
 // import logoXL from '../assets/AWSUGBD XL - dark.svg';
 // import logoM from '../assets/AWSUGBD M.svg';
@@ -29,7 +31,10 @@ const Branding = (props) => {
   return (
     <div className={styles.BrandingContainer}>
       <div className={styles.brand}>
-        <div className={styles.leftStyle} src='/assets/Left Pattern.svg'>
+        <div
+          className={styles.leftStyle}
+          // src='/assets/Left Pattern.svg'
+        >
           <LeftStyle />
         </div>
         <Link href='/'>
@@ -47,7 +52,10 @@ const Branding = (props) => {
           </a>
         </Link>
 
-        <div className={styles.rightStyle} src='/assets/Right Pattern.svg'>
+        <div
+          className={styles.rightStyle}
+          //  src='/assets/Right Pattern.svg'
+        >
           <RightStyle />
         </div>
       </div>

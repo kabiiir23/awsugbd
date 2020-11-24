@@ -149,7 +149,6 @@
     min-height: 96vh;
     width: 100%;
 
-    // background: white url('../assets/Tiger pattern.svg') center -1em / cover no-repeat;
     display: flex;
     flex-flow: column nowrap;
 
@@ -182,11 +181,6 @@
     }
 
     &__carousel {
-      // display: flex;
-      // width: 100%;
-      // align-items: center;
-      // justify-content: space-around;
-      // @include media('<1200px') {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
@@ -229,13 +223,13 @@
         line-height: 66px;
         hr {
           position: relative;
-          left: -5px;
+          left: -12px;
           margin-top: 0.8em;
           color: #ff9900;
         }
         &__link {
           position: relative;
-          left: 5px;
+          left: -2px;
           span {
             color: $gray-1;
             font-size: 2rem;

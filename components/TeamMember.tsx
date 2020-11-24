@@ -4,7 +4,13 @@ import { CgFacebook as FacebookIcon } from 'react-icons/cg';
 import { FaLinkedinIn as LinkedinIcon } from 'react-icons/fa';
 import style from './TeamMember.module.scss';
 
-export default function ({ avatar, name, details, facebook, linkedin }) {
+export default function TeamMember({
+  avatar,
+  name,
+  details,
+  facebook,
+  linkedin,
+}) {
   return (
     <div className={style.Container}>
       <div
@@ -15,8 +21,10 @@ export default function ({ avatar, name, details, facebook, linkedin }) {
       ></div>
       <div className={style.textContainer}>
         <p className={style.name}>{name}</p>
-        {details.split('\\n').map((i) => (
-          <p className={style.details}>{i}</p>
+        {details.split('\\n').map((i, index) => (
+          <p key={index} className={style.details}>
+            {i}
+          </p>
         ))}
         <div className={style.social}>
           {facebook ? (

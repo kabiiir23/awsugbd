@@ -6,6 +6,7 @@ import {
   useSpring,
   useTransform,
   useViewportScroll,
+  //@ts-ignore
 } from 'framer-motion';
 import styles from './HorizontalScroll.module.scss';
 
@@ -37,8 +38,10 @@ const HorizontalScroll = (props) => {
       offset={-150}
       className={styles.HorizontalScroll}
     >
-      {data.map((item) => (
-        <motion.span style={shift}>{item}</motion.span>
+      {data.map((item, index) => (
+        <motion.span key={index} style={shift}>
+          {item}
+        </motion.span>
       ))}
     </Link>
   );

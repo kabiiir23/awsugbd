@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EventCard from '../Components/EventCard';
+import EventCard from '../components/EventCard';
 import style from './Events.module.scss';
 
 export default function Events(props) {
