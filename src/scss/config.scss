@@ -34,6 +34,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -71,12 +76,6 @@ a:active {
 //   scroll-behavior: smooth;
 //   overflow-x: hidden;
 // }
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-}
 
 @mixin flexCenter {
   display: flex;
