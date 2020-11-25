@@ -14,11 +14,6 @@ $fontWeights: (
   'bold': 700,
 );
 
-.noscroll {
-  height: 100vh;
-  overflow: hidden;
-}
-
 //test
 // * {
 //   background: #000 !important;
@@ -52,33 +47,6 @@ $fontWeights: (
   @return map-get($fontWeights, $weightName);
 }
 
-// @mixin media($size) {
-//   @if $size == xs {
-//     @media (max-width: 576px) {
-//       @content;
-//     }
-//   } @else if $size == sm {
-//     @media (min-width: 576px) {
-//       @content;
-//     }
-//   } @else if $size == md {
-//     @media (min-width: 768px) {
-//       @content;
-//     }
-//   } @else if $size == lg {
-//     @media (min-width: 992px) {
-//       @content;
-//     }
-//   } @else if $size == xl {
-//     @media (min-width: 1200px) {
-//       @content;
-//     }
-//   } @else if $size == xxl {
-//     @media (min-width: 1800px) {
-//       @content;
-//     }
-//   }
-// }
 // body:after {
 //   //animation: grain 8s steps(10) infinite;
 //   background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
