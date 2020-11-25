@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { GetServerSideProps, GetStaticProps } from 'next';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
@@ -29,7 +31,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const quoteAPI = 'https://type.fit/api/quotes';
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   //@ts-ignore
   const fs = require('fs');
   const folder = './assets/images';
@@ -51,6 +53,7 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
 export default function Home(props) {
   const revealRefs = useRef([]);
   revealRefs.current = [];
