@@ -1,12 +1,8 @@
 import '../styles/globals.scss';
-import MainLayout from '../layouts/MainLayout';
-import type { AppProps /*, AppContext */ } from 'next/app';
+
+import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <MainLayout>
-      <Component {...pageProps} />
-    </MainLayout>
-  );
+  return <Component {...pageProps} />;
 }
 export default MyApp;

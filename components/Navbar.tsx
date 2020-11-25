@@ -24,7 +24,7 @@ const NavBar = ({ items }) => {
       return setState((previousState) => {
         return {
           ...previousState,
-          show: false,
+          show: true,
         };
       });
 
@@ -71,8 +71,17 @@ const NavBar = ({ items }) => {
             </a>
           </Link>
         ))}
-        {/* <Link href='/#userGroup'> */}
-        <Scroll
+        <Link href='/#userGroup'>
+          <a
+            className={`${style.Nav__item} ${
+              state.show && style.Nav__item__scroll
+            }`}
+          >
+            About Us
+          </a>
+        </Link>
+
+        {/* <Scroll
           to='userGroup'
           smooth={true}
           duration={500}
@@ -82,8 +91,8 @@ const NavBar = ({ items }) => {
           }`}
         >
           About Us
-        </Scroll>
-        {/* </Link> */}
+        </Scroll> */}
+
         {/* <Link
           to='userGroup'
           //spy={true}

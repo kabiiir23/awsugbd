@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import MainLayout from '../layouts/MainLayout';
 import BlogCard from '../components/BlogCard';
 
 import styles from './Blog.module.scss';
@@ -31,21 +32,26 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 const Blog = ({ posts }) => {
   return (
-    <div className={styles.Blog}>
-      <div className={styles.Blog_container}>
-        {posts.map((post, key) => (
-          <BlogCard
-            key={key}
-            thumbnail={post.thumbnail}
-            link={post.link}
-            title={post.title}
-            author={post.author}
-            //description={post.description}
-            date={post.pubDate}
-          />
-        ))}
+    <MainLayout
+      pageTitle='Blog'
+      description='AWS User Group Bangladesh blog posts'
+    >
+      <div className={styles.Blog}>
+        <div className={styles.Blog_container}>
+          {posts.map((post, key) => (
+            <BlogCard
+              key={key}
+              thumbnail={post.thumbnail}
+              link={post.link}
+              title={post.title}
+              author={post.author}
+              //description={post.description}
+              date={post.pubDate}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 export default Blog;
