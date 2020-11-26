@@ -47,7 +47,7 @@ const Branding = (props) => {
             variants={{
               hidden: {
                 opacity: 0,
-                y: 64,
+                y: 34,
               },
               visible: {
                 opacity: 1,
