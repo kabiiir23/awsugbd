@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const posts = await data.items;
   return {
     props: { posts },
-    //revalidate: 300,
+    revalidate: 1800,
   };
 };
 const Blog = ({ posts }) => {
