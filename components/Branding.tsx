@@ -9,25 +9,26 @@ import RightStyle from '../assets/Right Pattern.svg';
 // import logoM from '../assets/AWSUGBD M.svg';
 import styles from './Branding.module.scss';
 import gsap from 'gsap';
+import { motion } from 'framer-motion';
 
 const Branding = (props) => {
-  const revealRefs = useRef([]);
-  //revealRefs.current = [];
-  useEffect(() => {
-    gsap.from([revealRefs.current], 0.8, {
-      delay: 0.5,
-      ease: 'power3.out',
-      y: 20,
-      opacity: 0,
-    });
-    return () => {};
-  }, [revealRefs]);
+  // const revealRefs = useRef([]);
+  // //revealRefs.current = [];
+  // useEffect(() => {
+  //   gsap.from([revealRefs.current], 0.8, {
+  //     delay: 0.5,
+  //     ease: 'power3.out',
+  //     y: 20,
+  //     opacity: 0,
+  //   });
+  //   return () => {};
+  // }, [revealRefs]);
 
-  const addtoRef = (el) => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
-    }
-  };
+  // const addtoRef = (el) => {
+  //   if (el && !revealRefs.current.includes(el)) {
+  //     revealRefs.current.push(el);
+  //   }
+  // };
   return (
     <div className={styles.BrandingContainer}>
       <div className={styles.brand}>
@@ -38,7 +39,26 @@ const Branding = (props) => {
           <LeftStyle />
         </div>
         <Link href='/'>
-          <a ref={addtoRef} className={styles.brandlogo}>
+          <motion.a
+            //ref={addtoRef}
+            className={styles.brandlogo}
+            initial='hidden'
+            animate='visible'
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 64,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.8,
+                  delayChildren: 0.15,
+                },
+              },
+            }}
+          >
             <img
               className={styles.brandlogoXL}
               src='/assets/AWSUGBD XL - dark.svg'
@@ -49,7 +69,7 @@ const Branding = (props) => {
               src='/assets/AWSUGBD M.svg'
               alt=''
             />
-          </a>
+          </motion.a>
         </Link>
 
         <div
