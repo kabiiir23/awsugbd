@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { GetStaticProps, GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
