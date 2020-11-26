@@ -4,6 +4,7 @@
   .heroSection {
     min-height: 94vh;
     padding: 0 15vw 0 15vw;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 82vh 12vh;
@@ -47,7 +48,6 @@
     &__sideText {
       max-width: 100%;
       @include fontStyle;
-
       //margin-top: 12vh;
       margin: auto 0;
       //padding-top: 6%;

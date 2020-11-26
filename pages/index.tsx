@@ -3,6 +3,7 @@ import { GetServerSideProps, GetStaticProps } from 'next';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import MainLayout from '../layouts/MainLayout';
@@ -58,16 +59,15 @@ export default function Home(props) {
   const revealRefs = useRef([]);
   revealRefs.current = [];
   useEffect(() => {
-    gsap.from([revealRefs.current], 0.8, {
-      delay: 0.8,
-      ease: 'circ.out',
-      y: 64,
-      opacity: 0,
-      stagger: {
-        amount: 0.15,
-      },
-    });
-    return () => {};
+    // gsap.from([revealRefs.current], 0.8, {
+    //   delay: 0.8,
+    //   ease: 'circ.out',
+    //   y: 64,
+    //   opacity: 0,
+    //   stagger: {
+    //     amount: 0.15,
+    //   },
+    // });
   }, [revealRefs]);
 
   const addtoRef = (el) => {
@@ -87,6 +87,13 @@ export default function Home(props) {
   const bottomTextRef = useRef(null);
 
   useEffect(() => {
+    // if (scrollRefs.current) {
+    //   scrollRefs.current.forEach((element, i) => {
+    //     element.classList.add('hide');
+    //     console.log(element.classList.item(i));
+    //   });
+    // }
+
     gsap.to([scrollRefs.current], 0.8, {
       scrollTrigger: {
         //@ts-ignore
@@ -107,10 +114,7 @@ export default function Home(props) {
         trigger: bottomTextRef.current,
         scrub: true,
         start: 'top 100%',
-        //end: 'bottom bottom-=250',
       },
-      //ease: 'power3.in',
-      //opacity: 0,
       y: '-100px',
       duration: 0.5,
     });
@@ -122,7 +126,26 @@ export default function Home(props) {
       description='AWS User Group Bangladesh is the only Amazon approved user group serving the community of Amazon Web Services(AWS) in Bangladesh'
     >
       <main className={style.home}>
-        <section className={style.heroSection} id='main'>
+        <motion.section
+          className={style.heroSection}
+          id='main'
+          initial='hidden'
+          animate='visible'
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 64,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.8,
+                delayChildren: 0.15,
+              },
+            },
+          }}
+        >
           <div className={style.heroSection__sideText}>
             <p ref={addtoRef}>
               THE <br />
@@ -189,12 +212,12 @@ export default function Home(props) {
           <div className={style.heroSection__scroller}>
             <HorizontalScroll />
           </div>
-        </section>
+        </motion.section>
         <CustomThumbnail />
         <section className={style.userGroup} id='userGroup'>
           <div
             className={style.userGroup__story}
-            style={{ opacity: 0.8 }}
+            //style={{ opacity: 0.8 }}
             ref={addtoScrollRef}
           >
             <h1>AWS User Group Bangladesh</h1>
