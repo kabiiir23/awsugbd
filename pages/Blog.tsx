@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     revalidate: 1800,
   };
 };
-const Blog = ({ posts }) => {
+const blog = ({ posts }) => {
   return (
     <MainLayout
       pageTitle='Blog'
@@ -54,4 +54,4 @@ const Blog = ({ posts }) => {
     </MainLayout>
   );
 };
-export default Blog;
+export default blog;

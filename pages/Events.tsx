@@ -5,11 +5,11 @@ import MainLayout from '../layouts/MainLayout';
 import EventCard from '../components/EventCard';
 import style from './Events.module.scss';
 
-export default function Events(props) {
+export default function events(props) {
   return (
     <MainLayout
       pageTitle='AWS Events in Bangladesh'
-      description='AWS User Group Bangladesh events'
+      description='AWS User Group Bangladesh Events'
     >
       <div className={style.Events}>
         <h1>Upcoming Events</h1>
