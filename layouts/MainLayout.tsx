@@ -9,13 +9,13 @@ const NavbarItems = [
   {
     id: 1,
     item: 'Events',
-    link: '/Events',
+    link: '/events',
     hash: '',
   },
   {
     id: 2,
     item: 'Blog',
-    link: '/Blog',
+    link: '/blog',
     hash: '',
   },
 ];
